@@ -1,0 +1,27 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Dodaj książkę</h3>
+	</div>
+	<div class="modal-body">
+		<form name="bookAddForm">
+			<label>Tytuł: </label> <input type="text" ng-model="bookTitle" required> <br>
+			<br> <label>Autorzy: </label> <br>
+			<table>
+				<tr>
+					<th>Imię</th>
+					<th>Nazwisko</th>
+				</tr>
+				<tr ng-repeat="author in authors">
+					<td><input type="text" ng-model="author.firstName" required></td>
+					<td><input type="text" ng-model="author.lastName" required></td>
+				</tr>
+			</table>
+			<br>
+			<button ng-click="bookAddForm.$valid && prepareAdditionalAuthor()">Dodaj autora</button>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button ng-click="bookAddForm.$valid && saveBook()">Zapisz książkę</button>
+		<button ng-click="$dismiss()">Anuluj</button>
+	</div>
+</div>

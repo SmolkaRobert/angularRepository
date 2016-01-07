@@ -1,0 +1,39 @@
+@backgroundColour: fadeout(darken(#0099CC, 10%), 70%);
+@modalColour: fadeout(#3399FF, 50%);
+@tableFont: darken(#9A3334, 10%);
+@editButton: #F3EFE0;
+
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  margin-top: 15px;
+}
+table tr:nth-child(odd) {
+  color: lighten(@tableFont, 5%);
+  background-color: @backgroundColour;
+}
+table tr:nth-child(even) {
+  color: @tableFont;
+  background-color: lighten(@backgroundColour, 50%);
+}
+
+button {
+    background-color: @editButton;
+}
+
+body {
+ 	color: @tableFont;
+}
+
+div.modal-header {
+	background-color: @modalColour;
+}
+
+div.modal-body {
+	background-color: fadeout(@modalColour, 40%);
+}
+
+div.modal-footer {
+	background-color: @modalColour;
+}
